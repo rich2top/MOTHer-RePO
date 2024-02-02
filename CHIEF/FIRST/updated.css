@@ -1,0 +1,552 @@
+body {
+  font-family: "Kanit" !important;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+button,
+label,
+select,
+input {
+  font-size: 16px;
+  font-family: "Kanit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  font-family: "Kanit", sans-serif;
+  background-color: transparent; /* Transparent initial background */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+  border-width: 1px; /* Adjust the border thickness as needed */
+  padding: 5px 0; /* Adjust the vertical padding as needed */
+}
+
+/* Add this CSS to change the background color on scroll */
+.scrolled {
+  color: white;
+  background-color: #d3d3d3; /* Set your desired background color here */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.btn-outline-primary {
+  color: #fff; /* Set your desired button text color */
+  border-color: #fff; /* Set your desired button border color */
+}
+
+/* Add this CSS to style the navbar links */
+.navbar-nav .nav-link {
+  color: black !important; /* Set the default link color and use !important */
+  font-weight: normal;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+/* Change link color on hover */
+.navbar-nav .nav-link:hover {
+  color: #013220 !important; /* Set the hover color to blue and use !important */
+}
+
+/* CSS FOR THE FILTER SECTION */
+.property-filter-section {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  position: relative;
+  top: -50px;
+  z-index: 1;
+  margin-left: 80px; /* Add space to the left */
+  margin-right: 80px; /* Add space to the right */
+}
+
+#searchButton {
+  display: block;
+  margin: 0 auto; /* Center the button horizontally */
+  color: #ffffff;
+  background-color: #34495e;
+}
+
+/* BUTTON */
+/* Override Bootstrap's button styles */
+.btn.custom-button {
+  background-color: #2c3e50 !important; /* Change to your preferred background color */
+  color: #ecf0f1 !important; /* Change to your preferred text color */
+  border-color: #2c3e50 !important; /* Change to your preferred border color */
+}
+
+/* Override Bootstrap's button hover styles */
+.btn.custom-button:hover {
+  background-color: #34495e !important; /* Change to your preferred hover background color */
+  color: #ffffff !important; /* Change to your preferred hover text color */
+  border-color: #34495e !important; /* Change to your preferred hover border color */
+}
+
+/* SERVICES */
+/* CSS for the service block icons */
+.featured-block-icon {
+  max-width: 100px; /* Adjust the icon size as needed */
+  margin: 0 auto; /* Center the icon horizontally */
+}
+
+/* Remove underlines from anchor tags on hover */
+a:hover {
+  text-decoration: none !important;
+}
+
+/* CSS for the service blocks */
+.featured-block {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s;
+}
+
+.featured-block a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+}
+
+/* Styling for the image container */
+.featured-image {
+  background-color: #ffffff; /* Initial background color (invisible) */
+  transition: background-color 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.featured-block:hover .featured-image {
+  background-color: transparent; /* Show background color on hover */
+  transform: scale(1.05);
+}
+
+.featured-image img {
+  max-width: 100%;
+  height: 100%; /* Set height to 100% to ensure all images have the same height */
+  width: auto; /* Allow width to adjust proportionally */
+  display: block;
+}
+
+/* Optional: Add styling for the text */
+.featured-block-text {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.featured-block-text:hover {
+  color: black !important; /* Black text color on hover */
+}
+
+/* Add background padding to the "OUR SERVICES" title */
+#ourservices h2 {
+  background-color: #000 !important; /* Background color */
+  color: #fff; /* Text color */
+  padding: 10px; /* Padding around the title */
+  display: inline-block; /* Display as inline block to wrap the background */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.container-class .featured-block-text:hover {
+  color: black !important;
+}
+
+/* PROPERTY LISTING */
+.property-item {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px; /* Added margin to create space between property items */
+}
+
+.property-item:hover img {
+  transform: scale(1.05);
+}
+
+.property-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease-out; /* Transition for image only */
+}
+
+.property-label {
+  background-color: #013220; /* Color for the label */
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.property-details {
+  padding: 15px;
+}
+
+.property-price {
+  color: #013220 !important; /* Color for the price */
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.property-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.property-location {
+  color: #888; /* Color for the address */
+}
+
+.property-features {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.property-feature {
+  display: flex;
+  align-items: center;
+  color: #ff5733; /* Color for icons */
+  font-size: 14px;
+}
+
+.property-feature i {
+  margin-right: 5px;
+}
+
+/* Tab styles */
+.nav-pills .nav-item {
+  margin-right: 10px;
+}
+
+/* Tab content styles */
+.tab-content {
+  margin-top: 20px;
+}
+
+/* Custom tab indicator color */
+.nav-pills .nav-link.active {
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+}
+
+/* VIDEO GALLERY */
+.video-section {
+  background-color: #013220; /* Set your desired background color here */
+  padding: 50px 0; /* Adjust padding as needed */
+}
+
+.row {
+  display: flex;
+  align-items: center; /* Vertically center content */
+}
+
+.col-lg-6:first-child {
+  order: 1; /* Change the order to align the video to the left */
+}
+
+.col-lg-6:last-child {
+  order: 2; /* Change the order to align the text to the right */
+}
+
+.video-container {
+  position: relative;
+}
+
+.video {
+  max-width: 100%;
+  height: auto;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px; /* Set the width and height to create a round button */
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%; /* Make it perfectly round */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Add a hover effect for the play button */
+.play-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.about-title h2 {
+  color: #fff; /* Set text color for the "About Us" title */
+}
+
+.about-text {
+  color: #fff; /* Set text color for the "About Us" text */
+}
+
+/* COUNTER STYLE  */
+/* Style for the right image container */
+.right-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Style for the fill image */
+.fill-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%; /* Center the image horizontally */
+  transform: translateX(-50%); /* Adjust to center the image */
+}
+
+/* Additional CSS for the counter section if needed */
+.counter-section {
+  background-color: transparent; /* No background color */
+  padding: 0; /* Remove padding if not needed */
+}
+
+/* FLEX CSS */
+/* Style for the counter flex container */
+.counter-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  background-color: #2c3e50; /* Change this color as needed */
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%; /* Ensure the container takes full height of its parent */
+}
+
+/* Style for the counters */
+.counter-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.count {
+  font-size: 36px;
+  text-align: center;
+  color: #fff;
+}
+
+.larger-font {
+  font-size: 48px;
+}
+
+/* Style for the right image container */
+.right-image-container {
+  position: relative;
+  height: 100%;
+}
+
+.fill-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CSS for Centering Counters */
+.counter-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 100%; /* Ensure the flex container takes full height */
+}
+
+/* TESTIMONIAL */
+.testimonial-carousel-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-carousel {
+  display: flex;
+  animation: slideTestimonials 12s linear infinite;
+  animation-delay: 6s; /* Delay the animation by 6 seconds */
+}
+
+.testimonial-item {
+  flex: 0 0 auto;
+  width: 50%; /* Display two testimonials side by side */
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+@keyframes slideTestimonials {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  16.66667%,
+  83.33333% {
+    transform: translateX(0);
+  }
+  33.33333% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  66.66667% {
+    transform: translateX(-100%);
+  }
+}
+
+/* FORM CSS STYLE */
+/* Container for the contact form */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the container takes up the full viewport height */
+  background-image: url("images/living.jpg") !important; /* Replace 'your-image-url.jpg' with your image URL */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+}
+
+/* Contact form styles */
+.contact-form {
+  flex: 1; /* Stretch to fill available space */
+  max-width: 600px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  align-self: center; /* Vertically center within the container */
+  margin-left: 20px; /* Add left margin */
+  margin-top: 20px; /* Add top margin */
+  margin-bottom: 20px; /* Add bottom margin */
+}
+
+/* Styles for the first name and last name fields */
+.name-fields {
+  display: flex;
+  gap: 10px;
+}
+
+/* Adjust styles for individual form groups as needed */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%; /* Ensure each form group takes up the full width */
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+}
+
+.contact-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.submit-button:hover {
+  background-color: #2c3e50;
+}
+
+/* Styles for the site footer */
+.site-footer {
+  background-color: #f7f7f7;
+  padding: 40px 0;
+  color: #333;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.social-icons .icon-link {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.quick-links {
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-form input[type="email"] {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.newsletter-form button {
+  width: 30%;
+  padding: 10px;
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.newsletter-form button:hover {
+  background-color: #3c556d;
+}

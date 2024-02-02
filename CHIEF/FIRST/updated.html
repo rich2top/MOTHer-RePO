@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEEL</title>
+
+    <!-- WebFont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link href="updated.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Animate.css (for animations) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Include Wow.js (for scroll animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+      <!-- Logo/Brand -->
+      <a class="navbar-brand" href="#">
+        <img src="images" alt="LEEL Logo" />
+      </a>
+      <!-- Hamburger Menu (for mobile) -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link unfocused-link" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PROPERTIES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Submit Property Button -->
+      <button class="btn btn-outline-primary ml-auto custom-button">
+        SUBMIT A PROPERTY
+      </button>
+    </nav>
+
+    <!-- Hero Slider -->
+    <!-- Hero Slider -->
+    <div id="heroSlider" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="images/room.jpeg" alt="Image 1" class="d-block w-100" />
+          <div class="carousel-caption">
+            <h3>Slide 1 Title</h3>
+            <p>Slide 1 Description</p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="images/hero2.jpg" alt="Image 2" class="d-block w-100" />
+          <div class="carousel-caption">
+            <h3>Slide 2 Title</h3>
+            <p>Slide 2 Description</p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="images/hero3.jpg" alt="Image 3" class="d-block w-100" />
+          <div class="carousel-caption">
+            <h3>Slide 3 Title</h3>
+            <p>Slide 3 Description</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter starts here -->
+    <div class="property-filter-section">
+      <div class="property-filter-content container">
+        <h2>Property Search</h2>
+        <form id="propertyFilterForm">
+          <div class="form-row">
+            <!-- Location -->
+            <div class="col-md-3 mb-3">
+              <label for="location">Location</label>
+              <input
+                type="text"
+                class="form-control"
+                id="location"
+                placeholder="Enter location"
+              />
+            </div>
+            <!-- Property Type -->
+            <div class="col-md-3 mb-3">
+              <label for="propertyType">Property Type</label>
+              <select class="form-control" id="propertyType">
+                <option value="">Any</option>
+                <option value="house">House</option>
+                <option value="apartment">Apartment</option>
+                <!-- Add more property types as needed -->
+              </select>
+            </div>
+            <!-- Price Range -->
+            <div class="col-md-2 mb-3">
+              <label for="price">Price (₦)</label>
+              <input
+                type="text"
+                class="form-control"
+                id="price"
+                placeholder="Price"
+                oninput="formatPrice(this)"
+              />
+            </div>
+            <!-- Bedroom -->
+            <div class="col-md-2 mb-3">
+              <label for="bedroom">Bedroom</label>
+              <select class="form-control" id="bedroom">
+                <option value="">Any</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <!-- Add more bedroom options as needed -->
+              </select>
+            </div>
+            <!-- Bathroom -->
+            <div class="col-md-2 mb-3">
+              <label for="bathroom">Bathroom</label>
+              <select class="form-control" id="bathroom">
+                <option value="">Any</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <!-- Add more bathroom options as needed -->
+              </select>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" id="searchButton">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Filter ends here! -->
+
+    <section class="section-padding" id="ourservices">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-12 text-center mx-auto">
+            <h2 class="mb-5">OUR SERVICES</h2>
+          </div>
+
+          <!-- Service Block 1 -->
+          <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+            <div class="featured-block">
+              <a href="#" class="d-block">
+                <div class="featured-image">
+                  <img
+                    src="images/land (2).png"
+                    class="featured-block-icon img-fluid"
+                    alt="LAND"
+                  />
+                </div>
+                <p class="featured-block-text">LAND</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Block 2 -->
+          <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
+            <div class="featured-block">
+              <a href="#" class="d-block">
+                <div class="featured-image">
+                  <img
+                    src="images/residential (2).png"
+                    class="featured-block-icon img-fluid"
+                    alt="RESIDENTIAL"
+                  />
+                </div>
+                <p class="featured-block-text">RESIDENTIAL</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Block 3 -->
+          <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
+            <div class="featured-block">
+              <a href="#" class="d-block">
+                <div class="featured-image">
+                  <img
+                    src="images/commercial (2).png"
+                    class="featured-block-icon img-fluid"
+                    alt="COMMERCIAL"
+                  />
+                </div>
+                <p class="featured-block-text">COMMERCIAL</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Block 4 -->
+          <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+            <div class="featured-block">
+              <a href="#" class="d-block">
+                <div class="featured-image">
+                  <img
+                    src="images/estate (2).png"
+                    class="featured-block-icon img-fluid"
+                    alt="ESTATE"
+                  />
+                </div>
+                <p class="featured-block-text">ESTATE</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-0 gx-5 align-items-end">
+          <div class="col-lg-6">
+            <div
+              class="text-start mx-auto mb-5 wow slideInLeft"
+              data-wow-delay="0.1s"
+            >
+              <h1 class="mb-3">Property Listing</h1>
+              <p>
+                Explore our curated collection of exquisite properties, each one
+                waiting to become your perfect home sweet home. With elegance,
+                comfort, and style, your dream home is just a click away.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content">
+          <div id="tab-1" class="tab-pane fade show p-0 active">
+            <div class="row g-4">
+              <!-- Property Item 1 -->
+              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="property-item rounded overflow-hidden">
+                  <div class="position-relative overflow-hidden">
+                    <a href=""
+                      ><img class="img-fluid" src="images/glassh.webp" alt=""
+                    /></a>
+
+                    <div
+                      class="property-label rounded text-white position-absolute start-0 top-0 m-2 py-1 px-3"
+                    >
+                      RENT
+                    </div>
+                    <div
+                      class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
+                    >
+                      Apartment
+                    </div>
+                  </div>
+                  <div class="p-4 pb-0">
+                    <h5 class="text-primary mb-3">₦59,000,000</h5>
+                    <a class="d-block h5 mb-2" href="#">Katampe Royal Duplex</a>
+                    <p>
+                      <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                      Dipolar Cresent, Katampe II, Abuja
+                    </p>
+                  </div>
+                  <div class="d-flex border-top">
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-ruler-combined text-primary me-2"></i>
+                      1000 Sqft</small
+                    >
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-bed text-primary me-2"></i> 3 Bed</small
+                    >
+                    <small class="flex-fill text-center py-2"
+                      ><i class="fa fa-bath text-primary me-2"></i> 2
+                      Bath</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Property 2 -->
+              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="property-item rounded overflow-hidden">
+                  <div class="position-relative overflow-hidden">
+                    <a href=""
+                      ><img class="img-fluid" src="images/glassh.webp" alt=""
+                    /></a>
+
+                    <div
+                      class="property-label rounded text-white position-absolute start-0 top-0 m-2 py-1 px-3"
+                    >
+                      RENT
+                    </div>
+                    <div
+                      class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
+                    >
+                      Apartment
+                    </div>
+                  </div>
+                  <div class="p-4 pb-0">
+                    <h5 class="text-primary mb-3">₦59,000,000</h5>
+                    <a class="d-block h5 mb-2" href="#">Katampe Royal Duplex</a>
+                    <p>
+                      <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                      Dipolar Cresent, Katampe II, Abuja
+                    </p>
+                  </div>
+                  <div class="d-flex border-top">
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-ruler-combined text-primary me-2"></i>
+                      1000 Sqft</small
+                    >
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-bed text-primary me-2"></i> 3 Bed</small
+                    >
+                    <small class="flex-fill text-center py-2"
+                      ><i class="fa fa-bath text-primary me-2"></i> 2
+                      Bath</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Property 3 -->
+              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="property-item rounded overflow-hidden">
+                  <div class="position-relative overflow-hidden">
+                    <a href=""
+                      ><img class="img-fluid" src="images/glassh.webp" alt=""
+                    /></a>
+
+                    <div
+                      class="property-label rounded text-white position-absolute start-0 top-0 m-2 py-1 px-3"
+                    >
+                      RENT
+                    </div>
+                    <div
+                      class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
+                    >
+                      Apartment
+                    </div>
+                  </div>
+                  <div class="p-4 pb-0">
+                    <h5 class="text-primary mb-3">₦59,000,000</h5>
+                    <a class="d-block h5 mb-2" href="#">Katampe Royal Duplex</a>
+                    <p>
+                      <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                      Dipolar Cresent, Katampe II, Abuja
+                    </p>
+                  </div>
+                  <div class="d-flex border-top">
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-ruler-combined text-primary me-2"></i>
+                      1000 Sqft</small
+                    >
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-bed text-primary me-2"></i> 3 Bed</small
+                    >
+                    <small class="flex-fill text-center py-2"
+                      ><i class="fa fa-bath text-primary me-2"></i> 2
+                      Bath</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Property 4 -->
+              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="property-item rounded overflow-hidden">
+                  <div class="position-relative overflow-hidden">
+                    <a href=""
+                      ><img class="img-fluid" src="images/glassh.webp" alt=""
+                    /></a>
+
+                    <div
+                      class="property-label rounded text-white position-absolute start-0 top-0 m-2 py-1 px-3"
+                    >
+                      RENT
+                    </div>
+                    <div
+                      class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
+                    >
+                      Apartment
+                    </div>
+                  </div>
+                  <div class="p-4 pb-0">
+                    <h5 class="text-primary mb-3">₦59,000,000</h5>
+                    <a class="d-block h5 mb-2" href="#">Katampe Royal Duplex</a>
+                    <p>
+                      <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                      Dipolar Cresent, Katampe II, Abuja
+                    </p>
+                  </div>
+                  <div class="d-flex border-top">
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-ruler-combined text-primary me-2"></i>
+                      1000 Sqft</small
+                    >
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-bed text-primary me-2"></i> 3 Bed</small
+                    >
+                    <small class="flex-fill text-center py-2"
+                      ><i class="fa fa-bath text-primary me-2"></i> 2
+                      Bath</small
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Property 5 -->
+              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="property-item rounded overflow-hidden">
+                  <div class="position-relative overflow-hidden">
+                    <a href=""
+                      ><img class="img-fluid" src="images/glassh.webp" alt=""
+                    /></a>
+
+                    <div
+                      class="property-label rounded text-white position-absolute start-0 top-0 m-2 py-1 px-3"
+                    >
+                      RENT
+                    </div>
+                    <div
+                      class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
+                    >
+                      Apartment
+                    </div>
+                  </div>
+                  <div class="p-4 pb-0">
+                    <h5 class="text-primary mb-3">₦59,000,000</h5>
+                    <a class="d-block h5 mb-2" href="#">Katampe Royal Duplex</a>
+                    <p>
+                      <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                      Dipolar Cresent, Katampe II, Abuja
+                    </p>
+                  </div>
+                  <div class="d-flex border-top">
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-ruler-combined text-primary me-2"></i>
+                      1000 Sqft</small
+                    >
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-bed text-primary me-2"></i> 3 Bed</small
+                    >
+                    <small class="flex-fill text-center py-2"
+                      ><i class="fa fa-bath text-primary me-2"></i> 2
+                      Bath</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <br />
+              <!-- Property 6 -->
+              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="property-item rounded overflow-hidden">
+                  <div class="position-relative overflow-hidden">
+                    <a href=""
+                      ><img class="img-fluid" src="images/glassh.webp" alt=""
+                    /></a>
+
+                    <div
+                      class="property-label rounded text-white position-absolute start-0 top-0 m-2 py-1 px-3"
+                    >
+                      RENT
+                    </div>
+                    <div
+                      class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"
+                    >
+                      Apartment
+                    </div>
+                  </div>
+                  <div class="p-4 pb-0">
+                    <h5 class="text-primary mb-3">₦59,000,000</h5>
+                    <a class="d-block h5 mb-2" href="#">Katampe Royal Duplex</a>
+                    <p>
+                      <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                      Dipolar Cresent, Katampe II, Abuja
+                    </p>
+                  </div>
+                  <div class="d-flex border-top">
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-ruler-combined text-primary me-2"></i>
+                      1000 Sqft</small
+                    >
+                    <small class="flex-fill text-center border-end py-2"
+                      ><i class="fa fa-bed text-primary me-2"></i> 3 Bed</small
+                    >
+                    <small class="flex-fill text-center py-2"
+                      ><i class="fa fa-bath text-primary me-2"></i> 2
+                      Bath</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Add more property items here -->
+            </div>
+          </div>
+          <!-- Add more tabs and property items for "For Sell" and "For Rent" -->
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="video-container">
+              <video
+                id="myVideo"
+                controls
+                preload="none"
+                class="video"
+                poster="images/room.jpeg"
+              >
+                <source src="images/video_gallery.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div class="play-button" id="playButton">
+                <div class="play-icon">&#9658;</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-title text-center">
+              <h2>About Us</h2>
+            </div>
+            <div class="about-text">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                nec erat libero. Duis libero justo, eleifend a neque eget,
+                malesuada pellentesque metus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <br />
+    <br />
+    <section class="counter-section">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column with Flex Container for Counters -->
+          <div class="col-lg-6">
+            <div class="counter-flex-container">
+              <div class="counter-item">
+                <h3 class="counter-title">Year of Establishment</h3>
+                <p class="count larger-font" id="yearCounter">0</p>
+              </div>
+              <div class="counter-item">
+                <h3 class="counter-title">Number of Projects Completed</h3>
+                <p class="count larger-font" id="projectsCounter">0</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column with Image -->
+          <div class="col-lg-6">
+            <div class="right-image-container">
+              <img
+                src="images/glassh.webp"
+                alt="Fill Image"
+                class="fill-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <br />
+    <br />
+    <div class="testimonial-section" style="background-color: #f7f7f7">
+      <div class="container-xxl py-5">
+        <div class="container">
+          <div
+            class="text-center mx-auto mb-5 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 600px"
+          >
+            <h1 class="mb-3">Our Clients Say</h1>
+            <p>
+              Welcome to our review section, your trusted source for authentic
+              and unbiased insights.
+            </p>
+          </div>
+          <div
+            class="testimonial-carousel-container wow fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <div class="testimonial-carousel">
+              <div class="testimonial-item bg-light rounded p-3">
+                <div class="bg-white border rounded p-4">
+                  <p>
+                    LE & EL is a top notch real estate company, I can't believe
+                    what they delivered using modern and stylish materials. My
+                    Dream Home is here finally!
+                  </p>
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="img-fluid flex-shrink-0 rounded"
+                      src="images/Richie2.jpg"
+                      style="width: 45px; height: 45px"
+                    />
+                    <div class="ps-3">
+                      <h6 class="fw-bold mb-1">Client Name 1</h6>
+                      <small>Profession 1</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-item bg-light rounded p-3">
+                <div class="bg-white border rounded p-4">
+                  <p>
+                    LE & EL is a top notch real estate company, I can't believe
+                    what they delivered using modern and stylish materials. My
+                    Dream Home is here finally!
+                  </p>
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="img-fluid flex-shrink-0 rounded"
+                      src="images/Richie2.jpg"
+                      style="width: 45px; height: 45px"
+                    />
+                    <div class="ps-3">
+                      <h6 class="fw-bold mb-1">Client Name 2</h6>
+                      <small>Profession 2</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more testimonial items here -->
+              <div class="testimonial-item bg-light rounded p-3">
+                <div class="bg-white border rounded p-4">
+                  <p>
+                    LE & EL is a top notch real estate company, I can't believe
+                    what they delivered using modern and stylish materials. My
+                    Dream Home is here finally!
+                  </p>
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="img-fluid flex-shrink-0 rounded"
+                      src="images/Richie2.jpg"
+                      style="width: 45px; height: 45px"
+                    />
+                    <div class="ps-3">
+                      <h6 class="fw-bold mb-1">Client Name 2</h6>
+                      <small>Profession 2</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more testimonial items here -->
+              <div class="testimonial-item bg-light rounded p-3">
+                <div class="bg-white border rounded p-4">
+                  <p>
+                    LE & EL is a top notch real estate company, I can't believe
+                    what they delivered using modern and stylish materials. My
+                    Dream Home is here finally!
+                  </p>
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="img-fluid flex-shrink-0 rounded"
+                      src="images/Richie2.jpg"
+                      style="width: 45px; height: 45px"
+                    />
+                    <div class="ps-3">
+                      <h6 class="fw-bold mb-1">Client Name 2</h6>
+                      <small>Profession 2</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more testimonial items here -->
+              <div class="testimonial-item bg-light rounded p-3">
+                <div class="bg-white border rounded p-4">
+                  <p>
+                    LE & EL is a top notch real estate company, I can't believe
+                    what they delivered using modern and stylish materials. My
+                    Dream Home is here finally!
+                  </p>
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="img-fluid flex-shrink-0 rounded"
+                      src="images/Richie2.jpg"
+                      style="width: 45px; height: 45px"
+                    />
+                    <div class="ps-3">
+                      <h6 class="fw-bold mb-1">Client Name 2</h6>
+                      <small>Profession 2</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more testimonial items here -->
+              <div class="testimonial-item bg-light rounded p-3">
+                <div class="bg-white border rounded p-4">
+                  <p>
+                    LE & EL is a top notch real estate company, I can't believe
+                    what they delivered using modern and stylish materials. My
+                    Dream Home is here finally!
+                  </p>
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="img-fluid flex-shrink-0 rounded"
+                      src="images/Richie2.jpg"
+                      style="width: 45px; height: 45px"
+                    />
+                    <div class="ps-3">
+                      <h6 class="fw-bold mb-1">Client Name 2</h6>
+                      <small>Profession 2</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more testimonial items here -->
+              <div class="testimonial-item bg-light rounded p-3">
+                <div class="bg-white border rounded p-4">
+                  <p>
+                    Tempor stet labore dolor clita stet diam amet ipsum dolor
+                    duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem
+                    amet est kasd kasd erat eos
+                  </p>
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="img-fluid flex-shrink-0 rounded"
+                      src="img/testimonial-2.jpg"
+                      style="width: 45px; height: 45px"
+                    />
+                    <div class="ps-3">
+                      <h6 class="fw-bold mb-1">Client Name 2</h6>
+                      <small>Profession 2</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more testimonial items here -->
+              <div class="testimonial-item bg-light rounded p-3">
+                <div class="bg-white border rounded p-4">
+                  <p>
+                    Tempor stet labore dolor clita stet diam amet ipsum dolor
+                    duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem
+                    amet est kasd kasd erat eos
+                  </p>
+                  <div class="d-flex align-items-center">
+                    <img
+                      class="img-fluid flex-shrink-0 rounded"
+                      src="img/testimonial-2.jpg"
+                      style="width: 45px; height: 45px"
+                    />
+                    <div class="ps-3">
+                      <h6 class="fw-bold mb-1">Client Name 2</h6>
+                      <small>Profession 2</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more testimonial items here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form action="process_form.php" method="post">
+        <div class="form-group">
+          <div class="name-fields">
+            <div class="form-group">
+              <label for="first-name">First Name:</label>
+              <input type="text" id="first-name" name="first-name" required />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name:</label>
+              <input type="text" id="last-name" name="last-name" required />
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Send Message" class="submit-button" />
+        </div>
+      </form>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-logo">
+              <img src="logo.png" alt="LEEL" />
+            </div>
+            <p>Bring Your Reality Alive!</p>
+            <div class="social-icons">
+              <a href="#" target="_blank" class="icon-link"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" target="_blank" class="icon-link"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" target="_blank" class="icon-link"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" target="_blank" class="icon-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled quick-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Property</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Newsletter</h5>
+            <p>Subscribe to our newsletter for updates.</p>
+            <form class="newsletter-form" action="subscribe.php" method="post">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="updated.js"></script>
+  <script>
+    new WOW().init()
+  </script>
+</html>

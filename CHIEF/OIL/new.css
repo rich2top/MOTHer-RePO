@@ -1,0 +1,162 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Set the entire section to be responsive and fit the screen */
+.portfolio-section {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.container-fluid {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.row {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.col-lg-12 {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Existing styles for portfolio items */
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px; /* Uniform margin for both portfolios */
+}
+
+.portfolio-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px; /* Uniform margin for both portfolios */
+}
+
+.portfolio-description-right {
+  text-align: right !important;
+}
+
+.portfolio-description {
+  padding: 10px;
+  text-align: right; /* Text alignment to the right */
+}
+
+.portfolio-image img {
+  max-width: 100%;
+  max-height: 300px; /* Increased image height for both portfolios */
+  border-radius: 10px; /* Rounded corners for smooth edges */
+  transition: filter 0.9s ease-out, transform 0.5s ease-out; /* Add a transition for filter and transform */
+  filter: grayscale(100%); /* Start as sepia/black and white */
+}
+
+.portfolio-image img:hover {
+  filter: grayscale(0%); /* Turn to color on hover */
+  transform: scale(1.03); /* Zoom out slightly on hover */
+  transition: filter 0.9s ease-out, transform 0.5s ease-out; /* Add a transition for filter and transform */
+}
+
+/* Add a background gradient with bubble-like colors to the portfolio section */
+.portfolio-section {
+  background: linear-gradient(to bottom, #ffc107, #ffb95e, #e4af4d, #bb8000);
+  /* You can adjust the colors and direction to your preference */
+}
+
+/* To make the text more readable, you can change the text color */
+.portfolio-description,
+.portfolio-description-right {
+  color: #fff; /* White text color for better readability on the background */
+}
+
+/* ABOUT US */
+.about-section {
+  background-color: black; /* Set the background color to black */
+  position: relative; /* Needed for absolute positioning of yellow patches */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  overflow: hidden; /* Ensure the background covers the entire section */
+}
+
+/* Create yellow patches using pseudo-elements (::before and ::after) */
+.about-section::before,
+.about-section::after {
+  content: "";
+  background-color: #ffc107; /* Color of the yellow patches */
+  position: absolute;
+  width: 50px; /* Adjust the width of the patches as needed */
+  height: 50px; /* Adjust the height of the patches as needed */
+}
+
+/* Style the text and other elements within the section */
+.about-text {
+  color: white; /* Text color */
+  /* Add more styles as needed for your text */
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-section,
+.portfolio-section {
+  margin-top: 0; /* Remove top margin */
+  padding-top: 0; /* Remove top padding */
+}
+
+#slider-section,
+#about {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the dropdown */
+.services-dropdown .dropdown-menu {
+  display: none;
+  position: relative;
+  background-color: transparent; /* Dropdown background color */
+  border: transparent; /* Add a border for separation */
+  padding: 10px; /* Add some padding for spacing */
+  top: 100%; /* Position the dropdown below the parent item */
+  left: 0; /* Position the dropdown to the left of the parent item */
+}
+
+.services-dropdown:hover .dropdown-menu {
+  display: block; /* Show the dropdown on hover */
+}
+
+/* Adjust the search icon */
+.search-button {
+  border: none;
+  outline: none;
+  background-color: transparent; /* Remove background color */
+  padding: 0 10px; /* Remove padding */
+}
+
+#services-dropdown .nav-link:focus,
+#services-dropdown .nav-link:hover {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+#services-dropdown .dropdown-menu {
+  background-color: #ffc107; /* Yellow background for the dropdown items */
+  transition: background-color 0.3s ease; /* Add a transition effect */
+}
+
+#services-dropdown .dropdown-item {
+  color: black; /* Black text color */
+  transition: color 0.3s ease; /* Add a transition effect */
+}
+
+#services-dropdown .dropdown-item:hover {
+  background-color: black; /* Black background on hover */
+  color: #ffc107; /* Yellow text color on hover */
+}

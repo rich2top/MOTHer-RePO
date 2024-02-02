@@ -1,0 +1,352 @@
+body {
+  font-family: "Kanit";
+  font-size: 16px;
+  background-color: #fff;
+}
+
+button,
+label,
+select,
+input {
+  font-size: 16px;
+  font-family: "Kanit", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Set a fixed height for carousel items */
+.carousel-item {
+  height: 400px; /* Adjust the height as needed */
+  overflow: hidden; /* Hide overflow content */
+  position: relative;
+}
+
+/* Style the images to fit within the fixed height */
+.carousel-item img {
+  width: 100%;
+  height: auto; /* Automatically adjust the height while maintaining aspect ratio */
+}
+
+#heroSlider {
+  position: relative;
+  height: 100vh;
+}
+
+#heroSlider .carousel-inner {
+  height: 100%;
+}
+
+#heroSlider .carousel-item {
+  height: 100%;
+}
+
+/* Custom styles */
+.navbar {
+  transition: background-color 0.3s, padding 0.3s;
+  background-color: transparent;
+}
+
+/* Style for the unfocused "HOME" link */
+.unfocused-link {
+  color: #888; /* Change the color to your preferred unfocused color */
+  text-decoration: none; /* Remove the underline */
+}
+
+.navbar.scrolled {
+  background-color: #ffffff; /* Change to the desired background color */
+  padding-top: 10px; /* Adjust as needed */
+  padding-bottom: 10px; /* Adjust as needed */
+}
+
+/* CSS for the property filter section */
+.property-filter-section {
+  background-color: rgb(255, 255, 255); /* Set your desired background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(50vh - 90px); /* Adjust based on your header/navbar height */
+}
+
+.property-filter-content {
+  background-color: rgb(230, 229, 229); /* Set a different background color */
+  padding: 20px;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+}
+
+/* CSS for the service blocks */
+.featured-block {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s;
+}
+
+.featured-block a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+}
+
+.featured-image {
+  background-color: #ffffff; /* Initial background color (invisible) */
+  transition: background-color 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.featured-block:hover .featured-image {
+  background-color: transparent; /* Show background color on hover */
+  transform: scale(1.05);
+}
+
+.featured-image img {
+  max-width: 100%;
+  height: 100%; /* Set height to 100% to ensure all images have the same height */
+  width: auto; /* Allow width to adjust proportionally */
+  display: block;
+}
+
+/* Optional: Add styling for the text */
+.featured-block-text {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* CSS for clickable property items with zoom effect */
+.property-item {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s;
+}
+
+.property-item a {
+  text-decoration: none; /* Remove underline for links */
+  color: inherit;
+}
+
+.property-item a:hover {
+  text-decoration: none; /* Remove underline on hover for links */
+}
+
+.property-item:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.property-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.property-details {
+  margin-top: 20px;
+}
+
+.property-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.property-location {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.property-amount {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.property-rooms,
+.property-bathrooms,
+.property-land {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Add this to your stylesheet */
+.video-section {
+  background-color: #000; /* Background color for the video section */
+  color: #fff; /* Text color for the content next to the video */
+  padding: 50px 0; /* Adjust padding as needed */
+  position: relative;
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Vertically center items */
+}
+
+.video-container {
+  position: relative;
+  width: 100%; /* Make the video container fill the entire column */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (change as needed) */
+  overflow: hidden;
+}
+
+.play-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6); /* Dim background */
+  cursor: pointer;
+}
+
+.play-icon {
+  font-size: 48px;
+  color: #fff;
+}
+
+.video {
+  width: 100%; /* Make the video fill the entire container */
+  height: 100%; /* Make the video fill the entire container */
+  object-fit: cover; /* Cover the entire container while maintaining aspect ratio */
+}
+
+.about-text {
+  text-align: left; /* Align text to the left */
+  margin-left: 20px; /* Add some left margin for spacing */
+}
+
+.about-title {
+  text-align: center; /* Center the title */
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+/* CSS for the video play button */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.play-icon {
+  font-size: 48px;
+  color: red;
+  text-shadow: 1px 1px 2px #000; /* Optional: Add text shadow for better visibility */
+}
+
+/* Style for the counter section */
+.counter-section {
+  background-color: #f9f9f9; /* Set your desired background color */
+  padding: 50px 0; /* Adjust padding as needed */
+}
+
+/* Style for the counters */
+.counter-title {
+  font-size: 24px;
+}
+
+.counters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.counter-item {
+  text-align: center;
+  margin-bottom: 20px;
+  animation-duration: 2s;
+}
+
+.counter-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.count {
+  font-size: 36px; /* Increase the font size for larger numbers */
+  font-weight: bold;
+  color: #2c3e50; /* Set your desired text color */
+}
+
+/* Style for the right-side image */
+.right-image {
+  max-width: 100%;
+  height: auto;
+  float: right;
+}
+
+/* Happy Client Section */
+.happy-client-section {
+  background-color: #f7f7f7; /* Background color for the section */
+  padding: 50px 0; /* Adjust padding as needed */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.happy-client-wrapper {
+  overflow: hidden; /* Hide overflowing content */
+  position: relative;
+}
+
+.happy-client-flexbox {
+  display: flex;
+  overflow: hidden; /* Hide overflowing content */
+  transition: transform 1s ease; /* Smooth scrolling transition */
+}
+
+.happy-client-item {
+  flex: 0 0 33.33%; /* Display 3 items at a time */
+  text-align: center;
+  padding: 20px;
+}
+
+.client-image {
+  width: 100px; /* Adjust image size as needed */
+  height: 100px; /* Adjust image size as needed */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover;
+}
+
+.client-review {
+  margin-top: 20px; /* Add space for reviews */
+}
+
+/* Hide scrollbar */
+.happy-client-flexbox::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.happy-client-flexbox::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* Add your custom styles here */
+.navbar.navbar-light {
+  background-color: transparent;
+  transition: background-color 0.3s, padding 0.3s;
+}
+
+.navbar.navbar-light.scrolled {
+  background-color: #181818; /* Change to your desired background color */
+  padding-top: 10px; /* Adjust the top padding as needed */
+  padding-bottom: 10px; /* Adjust the bottom padding as needed */
+}
+
+.navbar.navbar-light.scrolled .nav-link {
+  color: #ffffff; /* Change to your desired text color */
+}
+
+.navbar-toggler-icon {
+  background-color: #333; /* Change to your desired color for the toggler icon */
+}
+
+.navbar-toggler {
+  padding: 5px; /* Adjust the padding as needed */
+}
